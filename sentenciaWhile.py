@@ -35,20 +35,23 @@ contPares = 0
 sumaPares = 0
 promedio = 0
 contImpares = 0
-while numero != 0:
-    contadorNumeros +=1
-    if numero % 2 == 0:
-        contPares = contPares + 1
-        sumaPares = sumaPares + numero
-    else:
-        contImpares = contImpares + 1
-    numero = int(input("Ingrese un valor: "))
+if numero > 0:
+    while numero > 0:
+        contadorNumeros +=1
+        if numero % 2 == 0:
+            contPares = contPares + 1
+            sumaPares = sumaPares + numero
+        else:
+            contImpares = contImpares + 1
+        numero = int(input("Ingrese un valor: "))
+else:
+    print("Error de valor")
 
 print("total numeros Pares: ", contPares)
 print("La suma de los num pares es:", sumaPares)
 print("El promedio de los num pares es: ",sumaPares//contPares)
 
-print()
+print(f"total de numeros impares: {contImpares}")
 
 print("Total de digitos: ", contadorNumeros)
 
