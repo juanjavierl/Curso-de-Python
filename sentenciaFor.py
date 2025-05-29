@@ -16,18 +16,18 @@ for i in range(fila):
     print() """
 
 
-tam = int(input("Tamanio : "))
+""" tam = int(input("Tamanio : "))
 for i in range(tam):
     for j in range(tam):
         if i == j or i+j == tam-1:
             print("*", end=" ")
         else:
             print(" ", end=" ")
-    print()
+    print() """
 
 
-""" for i in range(1, 10+1, 1):
+for i in range(1, 10+1, 1):
     if i == 5:
-        pass #break continue
-    print(i) """
+        continue
+    print(i)
 
