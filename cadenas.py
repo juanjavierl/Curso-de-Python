@@ -32,9 +32,20 @@ for letra in texto:
 print(invertida.upper()) """
 
 
-texto = input("Ingrese un texto: ")
+""" texto = input("Ingrese un texto: ")
 invertida = ""
 for letra in range(len(texto)-1, -1, -1):
     #print(letra)
     invertida = invertida + texto[letra]
-print(invertida.upper())
+print(invertida.upper()) 
+
+oso panda   === oso panda
+"""
+
+palabra = input("Escriba una palabra: ")
+print(palabra[5])
+invertida = palabra[::-1]
+if palabra.lower() == invertida.lower():
+    print("Palimdromo")
+else:
+    print("No")
