@@ -16,7 +16,7 @@ except TypeError:
 
 #manejo de librerias
 
-import random
+""" import random
 numero_aleatorio = random.randint(1, 10)
 intentos = 3
 for i in range(1,intentos+1):
@@ -25,12 +25,16 @@ for i in range(1,intentos+1):
         if adivina == numero_aleatorio:
             print("Adivinaste el numero..")
             break
+        elif adivina < numero_aleatorio:
+            print("Muy bajo")
+        else:
+            print("Muy alto")
         if i < intentos:
-            print(f"Te quedan {intentos - i} intentos: {variable1}")
+            print(f"Te quedan {intentos - i} intentos")
         else:
             print("Lo siento perdiste")
     except ValueError:
-        print("Datos invalidos ")
+        print("Datos invalidos ") """
 
 
 """ import math
@@ -46,9 +50,26 @@ archivos = os.listdir(".")  # Lista archivos del directorio actual
 print(archivos) """
 
 from datetime import datetime
-fecha_hora_actual = datetime.now()
-Fecha=fecha_hora_actual.strftime("%d-%m-%Y %H:%M")
-print(Fecha)
+""" fecha_hora_actual = datetime.now()
+
+Fecha=fecha_hora_actual.strftime("Dia %A mes %B %Y-%m-%d %H:%M")
+print(fecha_hora_actual.date().month)
+print(Fecha) """
+
+fecha = "2025-06-02 20:05"
+fecha = datetime.strptime(fecha, "%Y-%m-%d %H:%M")
+print(fecha.hour)
+
+
+
+fecha1 = datetime(2026, 5, 10, 20, 14)
+fecha2 = datetime(2025, 6, 1, 20, 14)
+if fecha1 < fecha2:
+    print("La fecha1 es menor")
+else:
+    print("La fecha1 es mayor")
+
+
 
 
 
