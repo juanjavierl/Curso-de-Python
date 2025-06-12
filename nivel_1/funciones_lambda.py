@@ -54,10 +54,10 @@ def funcion_a(funcion_b):
         return resp
     return funcion_c
 
-""" @funcion_a
+@funcion_a
 def saludar():
     print("hola un saludo")
-saludar() """
+saludar()
 
 @funcion_a
 def sumar(a, b):
