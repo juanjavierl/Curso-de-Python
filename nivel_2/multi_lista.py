@@ -22,6 +22,25 @@ def multi_lista():
             valor = int(input())
             lista.append(valor)  
         multi_lista.append(lista)
-    print(multi_lista)
+    return multi_lista
 
-multi_lista()#llamada a la función
+def mostrar_lista(matriz):
+    for fila in matriz:
+        print(fila)
+
+def sumar_diagonal_principal(matriz):
+    suma = 0
+    for fila in range(len(matriz)):
+        for cols in range(len(matriz)):
+            if fila == cols:
+                suma = suma + matriz[fila][cols]
+    return suma
+
+def suma_dig_secundrio(matriz):
+    pass
+
+def main():
+    matriz = multi_lista()#llamada a la función
+    mostrar_lista(matriz)
+    print("La suma de su diagonal principal es: ",sumar_diagonal_principal(matriz))
+main()

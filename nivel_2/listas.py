@@ -1,3 +1,6 @@
+mi_lista = [2,4,6,8,10,"hola", True, ['a','e','i','o','u']]
+mi_lista[5]="Bienvenidos"
+print(mi_lista)
 """ mi_lista = [2,4,6,8,10,"hola", True, ['a','e','i','o','u']]
 
 print(type(mi_lista))
