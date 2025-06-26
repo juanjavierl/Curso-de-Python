@@ -25,5 +25,4 @@ def mis_datos(nombre_a_buscar):
     else:
         print("Error al conectarse a la API", respuesta.status_code)
 
-
 mis_datos("e")
