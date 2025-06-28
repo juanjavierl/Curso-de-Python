@@ -1,22 +1,25 @@
-class Vehiculo:
-    ruedas = 2
-    color = "rojo"
+class Empleado:
 
-    def __init__(self, ruedas, color):
-        self.ruedas = ruedas
-        self.color = color
-        #return f"Auto con {self.ruedas} ruedas de color: {self.color}"
+    def __init__(self):
+        self.nombre = input("Ingrese su nombre: ")
+        self.sueldo = float(input("Ingrese su sueldo: "))
 
     def __str__(self):
-        return f"Auto con {self.ruedas} ruedas de color: {self.color}"
-
-    def otro(self):
-        contador = 0
-        self.color
+        return f"{self.nombre} gano {self.sueldo} bs"
     
+    def otr_metod(self, valor):
+        pass
     
-choche1 = Vehiculo(12, 'Verde')
-print(choche1)
+    def determinar_impuesto(self):
+        mej = f""
+        if self.sueldo >= 3000:
+            mej = f"{self.nombre} Si Paga impuestos"
+        else:
+            mej = f"{self.nombre} No paga impuestos"
+            self.otr_metod(mej)
+        return mej
+    
 
-""" choche2 = Auto()
-print(choche2.crear_coche(2, 'Blanco')) """
+
+empleado1 = Empleado()
+print(empleado1.determinar_impuesto())
