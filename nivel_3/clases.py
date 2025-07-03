@@ -1,10 +1,14 @@
 import csv
 import os
+import random
 
-class Empleado:
-    def __init__(self, nombre, sueldo):
+from abc import ABC, abstractmethod
+
+class Empleado(ABC):
+    def __init__(self, nombre, sueldo, ci=5555):
         self.nombre = nombre
         self.sueldo = float(sueldo)
+        self.__ci = ci
 
     def __str__(self):
         return f"{self.nombre} gano {self.sueldo} bs"
@@ -12,16 +16,19 @@ class Empleado:
     def to_list(self):
         return [self.nombre, self.sueldo, self.determinar_impuesto()]
     
+    @abstractmethod
     def determinar_impuesto(self):
-        mej = ""
-        if self.sueldo >= 3000:
-            mej = "Si"
-        else:
-            mej = "No"
-        return mej
+        pass
+    
+    def mostar_ci(self):
+        return self.__ci
+    
+    def __codigo(self):
+        return f"Codigo: {random.randint(100,999)}"
     
     def saludar(self):
-        return "Hola desde la clase padre"
+        resp = self.__codigo()
+        return f"Hola desde la clase padre {resp}"
     
 class EmpleadoEventual(Empleado):
     def __init__(self, nombre, sueldo, ci, direccion):
@@ -31,12 +38,19 @@ class EmpleadoEventual(Empleado):
     def __str__(self):
         return f"El eventual: {self.nombre} - gano: {self.sueldo} su direccion es: {self.direccion}"
 
+    def determinar_impuesto(self):
+        mej = ""
+        if self.sueldo >= 3000:
+            mej = "Si"
+        else:
+            mej = "No"
+        return mej
 
-empleado1  = Empleado('rodrigo', 2500)
-#print(empleado1)
+empleado1  = EmpleadoEventual('jose', 4500, 787787,'Av Velez')
+print(empleado1.determinar_impuesto())
 
-emp_eventual = EmpleadoEventual('jose', 4500, 787787,'Av Velez')
-print(emp_eventual)
+# emp_eventual = EmpleadoEventual('jose', 4500, 787787,'Av Velez')
+# print(emp_eventual)
 
 class Agenda:
     def __init__(self, archivo='agenda.csv'):
